@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ChalkEmOffApp">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <title>Chalk'Em Off</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/styles/landing.css">
+    <link rel="stylesheet" type="text/css" href="/styles/login.css">
 </head>
 <body>
+  <nav class="head-band">
+    <div class="band-logo">
+      <img src="assets/images/logo.png">
+    </div>
+    <div class="band-text-box">
+      <h3 class="band-text">Chalk'EmOff</h3>
+    </div>
+    <div class="band-login-box">
+      <a ui-sref="signin">
+        <button type="button" name="sign-in-button" class="sign-in-out-button sign-hover">Sign In</button>
+      </a>
+      <a ui-sref="signup">
+        <button type="button" name="sign-out-button" class="sign-in-out-button sign-hover">Sign Up</button>
+      </a>
+    </div>
+  </nav>
+    <ui-view></ui-view>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="/scripts/bower_components/angular/angular.js"></script>
+    <script src="/scripts/bower_components/angular-cookie/angular-cookie.js"></script>
+    <script src="/scripts/bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/LandingCtrl.js"></script>
+    <script src="/scripts/SignUpCtrl.js"></script>
+    <script src="/scripts/SignInCtrl.js"></script>
 </body>
 </html>

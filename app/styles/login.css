@@ -1,0 +1,11 @@
+.sign-content {
+  position: relative;
+  background-color: #E7E6E8;
+  height: 750px;
+  top: 0;
+}
+.sign-content .form-main {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+}

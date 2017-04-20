@@ -1,0 +1,105 @@
+
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border;
+    box-sizing: border-box;
+}
+html {
+    height: : 100%;
+    font-size: 100%;
+}
+body {
+    background-position: center center;
+    background-color: #FFFFFF;
+    min-height: 100%;
+    padding-bottom: 200px;
+}
+.head-band {
+  position: relative;
+  background-color: #819966;
+  height: 125px;
+  z-index: 1;
+}
+.head-band .band-logo {
+  position: relative;
+  bottom: 1.0rem;
+}
+.head-band .band-text-box {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  height: 125px;
+  left: 20.0rem;
+}
+.band-text{
+  position: relative;
+  font-family: Chalkduster, sans-serif;
+  font-size: 48px;
+
+  vertical-align: middle;
+  color: #FFFFFF;
+
+}
+.head-band .band-login-box {
+  position: absolute;
+  /*background-color: yellow;*/
+  width: 170px;
+  height: 25px;
+  top: 4.5rem;
+  right: 0.5rem;
+}
+.band-login-box .sign-in-button {
+    position:relative;
+    text-align:center;
+    font-size: 14px;
+    background-color: #588570;
+    color: rgb(210,40,123);
+    border-radius: 10% 10%;
+    border-color: black;
+    display: inline-block;
+    width: 50%;
+    height: 25px;
+}
+.band-login-box .sign-in-out-button {
+  background-color: #588570; /* Green */
+  box-shadow: #000000;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: Chalkduster, sans-serif;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.sign-hover:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+@media (min-width: 640px){
+    html {font-size: 112%;}
+    .column {
+        float: left;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }
+}
+@media (min-width: 1024px){
+    html {font-size: 120%;}
+}
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}

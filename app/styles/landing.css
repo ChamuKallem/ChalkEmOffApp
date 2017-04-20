@@ -1,0 +1,20 @@
+body.landing {
+     background-color: rgb(58,23,63);
+ }
+.main-content-image {
+  position: relative;
+  min-height: 500px;
+  background-image: url(../assets/images/todolist-1.jpg);
+  width: 100%;
+  height: 1024px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 0%;
+}
+.main-content-text{
+  position: relative;
+  font-family: Chalkduster, sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
