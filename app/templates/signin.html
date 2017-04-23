@@ -1,3 +1,15 @@
-<section>
-  <p>{{signin.testtitle}}</p>
+<section class="sign-content">
+  <form class="form-main" role="form" ng-init="signInForm = {}">
+    <div class="form-group">
+      <label>email</label>
+      <input type="email" name="email" ng-model="signInForm.email" required="required" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label>password</label>
+      <input type="password" name="password" ng-model="signInForm.password" required="required" class="form-control"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg" ng-click="doLogin()">Login</button><br>
+  </form>
 </section>

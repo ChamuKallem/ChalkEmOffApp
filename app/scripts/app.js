@@ -1,7 +1,12 @@
 (function(){
   function config($stateProvider, $locationProvider, $authProvider){
     $authProvider.configure({
-      apiUrl: 'http://localhost:3000'
+      apiUrl: 'http://localhost:3000',
+      handleRegistrationResponse: function(response) {
+            alert("Registration response");
+            console.log(response.data);
+            return response.data;
+        }
     });
     $locationProvider
         .html5Mode({
@@ -13,6 +18,11 @@
               url: '/',
               controller: 'LandingCtrl as landing',
               templateUrl: '/templates/landing.html'
+            })
+            .state('todos', {
+              url: '/todos',
+              controller: 'todosCtrl as todos',
+              templateUrl: '/templates/todos.html'
             })
             .state('signin', {
                 url:'/signin',
