@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" type="text/css" href="/styles/landing.css">
     <link rel="stylesheet" type="text/css" href="/styles/login.css">
+    <link rel="stylesheet" type="text/css" href="/styles/todos.css">
 </head>
 <body>
   <nav class="head-band">
@@ -16,13 +17,15 @@
     <div class="band-text-box">
       <h3 class="band-text">Chalk'EmOff</h3>
     </div>
-    <div class="band-login-box">
+    <div class="band-login-box" ng-controller="userAuthCtrl as user">
       <a ui-sref="signin">
-        <button type="button" name="sign-in-button" class="sign-in-out-button sign-hover">Sign In</button>
+        <button ng-show="!isLogin" type="button" name="sign-in-button" class="sign-in-out-button sign-hover" ng-click="doSignIn()">Sign In</button>
       </a>
       <a ui-sref="signup">
-        <button type="button" name="sign-out-button" class="sign-in-out-button sign-hover">Sign Up</button>
+        <button ng-disabled="!isLogin" type="button" name="sign-up-button" class="sign-in-out-button sign-hover" ng-click="doSignUp()">Sign Up</button>
       </a>
+
+      <button ng-show="isLogin" type="button" name="sign-out-button" class="sign-in-out-button sign-hover" ng-click="doSignOut()">Sign Out</button>
     </div>
   </nav>
     <ui-view></ui-view>
@@ -36,5 +39,7 @@
     <script src="/scripts/SignUpCtrl.js"></script>
     <script src="/scripts/SignInCtrl.js"></script>
     <script src="/scripts/todosCtrl.js"></script>
+    <script src="/scripts/userAuthCtrl.js"></script>
+    <!-- <script src="/scripts/services/apicallService.js"></script> -->
 </body>
 </html>

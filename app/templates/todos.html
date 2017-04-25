@@ -1,9 +1,14 @@
 <section class="main">
-  <div class="todos-list-bar">
-    <ui ng-repeat="todo in todos.todos">
+  <div class="todos-list-section">
+    <ui ng-repeat="todo in Todos">
+        <div class="todo-name" ng-click="showTodoItems()">
+            {{todo.attributes.title}}</br>
+        </div>
+
     </ui>
+    <button type="button" name="new-todo-button" class="new-todo-button" ng-click="createTodo()">New Todo</button>
   </div>
   <div class="todo-cat-section">
-
+    <p>Cat section for todos</p>
   </div>
 </section>
