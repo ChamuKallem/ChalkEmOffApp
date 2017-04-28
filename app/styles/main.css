@@ -23,6 +23,9 @@ body {
 .head-band .band-logo {
   position: relative;
   bottom: 1.0rem;
+  height: 125px;
+  background-image: url(../assets/images/logo.png);
+  background-repeat: no-repeat;
 }
 .head-band .band-text-box {
   position: absolute;

@@ -9,12 +9,13 @@
         $scope.isLogin = true;
       };
       $scope.doSignOut = function(){
+        console.log($auth);
         $auth.signOut()
           .then(function(resp) {
             console.log(resp);
-            // handle success response
-            $state.go('/')
-            $scope.isLogin = false;
+            // // handle success response
+            // $state.go('/')
+            // $scope.isLogin = false;
           })
           .catch(function(resp) {
             // handle error response
