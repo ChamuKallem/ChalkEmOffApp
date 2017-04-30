@@ -22,7 +22,7 @@
         <button ng-show="!isLogin" type="button" name="sign-in-button" class="sign-in-out-button sign-hover" ng-click="doSignIn()">Sign In</button>
       </a>
       <a ui-sref="signup">
-        <button ng-disabled="!isLogin" type="button" name="sign-up-button" class="sign-in-out-button sign-hover" ng-click="doSignUp()">Sign Up</button>
+        <button ng-show="!isLogin" type="button" name="sign-up-button" class="sign-in-out-button sign-hover" ng-click="doSignUp()">Sign Up</button>
       </a>
 
       <button ng-show="isLogin" type="button" name="sign-out-button" class="sign-in-out-button sign-hover" ng-click="doSignOut()">Sign Out</button>

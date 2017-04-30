@@ -2,14 +2,15 @@
     function userAuthCtrl($scope, $state, $auth) {
       $scope.doSignIn = function(){
         $state.go('signin');
-        $scope.isLogin = true;
+        // $scope.isLogin = true;
       };
       $scope.doSignUp = function(){
         $state.go('signup');
-        $scope.isLogin = true;
+        // $scope.isLogin = true;
       };
       $scope.doSignOut = function(){
         console.log($auth);
+        $scope.isLogin = false;
         $auth.signOut()
           .then(function(resp) {
             console.log(resp);

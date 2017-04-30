@@ -44,7 +44,7 @@
   position: relative;
   background-color: #E7E6E8;
   float: left;
-  width: 75%;
+  width: 50%;
   height: 100%;
 }
 .todo-cat-section .cat-title {
@@ -53,11 +53,56 @@
 }
 .todo-cat-section .cat-list {
   position: relative;
-
-  width: 250px;
 }
-.cat-list .icon-del {
-  background-image:  url(../assets/images/ic_delete_forever_black_18dp_1x.png) no-repeat;
-  height: 18px;
-  display: inline-block;
+.label-hover {
+  display: inline;
+  background-color: lightblue;
+  align-items: baseline;
+}
+
+.icon-del {
+  transition: all 0.5s;
+  display: inline;
+  opacity: 0.1;
+}
+.icon-del:hover {
+  opacity: 1.0;
+  display: inline;
+}
+.new-todo-section {
+float: left;
+margin: 2rem 0 0 2rem;
+
+}
+.new-todo-section-text {
+  position: relative;
+  text-align: center;
+  font-family: Chalkduster, sans-serif;
+  font-size: 18px;
+  word-wrap: break-word;
+  background-color: yellow;
+  width: 50em;
+}
+ .new-todo-section-input {
+   margin: 6rem 0 0 2rem;
+   background-color: lightgreen;
+}
+#newTodoName{
+  width: 252px;
+  height: 36px;
+}
+#newTodoButton{
+  background-color: #588570;
+  border-radius: 10% 10%;
+  font-family: Chalkduster, sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+#newItemName {
+  width: 252px;
+  height: 36px;
+}
+#newItemButton{
+  width: 145;
+  height: 36px;
 }

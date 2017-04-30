@@ -9,7 +9,10 @@
               // handle success response
               console.log(resp);
               console.log("entered sign up");
-              $state.go('test')
+              $scope.isLogin = true;
+              $scope.user_id = resp.id;
+              $state.reload();
+              $state.go('todos');
             })
             .catch(function(resp) {
               // handle error response

@@ -69,12 +69,22 @@
           var data = {"name": itemName, "done": false};
           var str = $scope.Todos.todo_id + '';
           $http.post('http://localhost:3000/v1/todos/' + str + '/items', JSON.stringify(data)).
-          then(function(responseNewItem) {
+            then(function(responseNewItem) {
               console.log(responseNewItem);
               if (responseNewItem.data.data){
                 $scope.Todos.Items.push(responseNewItem.data.data);
               }
              });
+        };
+        this.deleteItem = function(item_id){
+          var itemIndex = $scope.Todos.Items.map(function(e) { return e.id; }).indexOf(item_id);
+          var str = item_id + '';
+          $http.delete('http://localhost:3000/v1/items/' + str).
+            then(function(delteResponse) {
+              console.log(delteResponse);
+              $scope.Todos.Items.splice(itemIndex, 1);
+             });
+          console.log("entered delete Item");
         };
 
     }
