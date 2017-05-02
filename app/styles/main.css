@@ -1,4 +1,13 @@
 
+@font-face {
+    font-family: 'Chalkduster';
+    src:url('/app/assets/fonts/Chalkduster.ttf.woff') format('woff'),
+        url('/app/assets/fonts/Chalkduster.ttf.svg#Chalkduster') format('svg'),
+        url('/app/assets/fonts/Chalkduster.ttf.eot'),
+        url('/app/assets/fonts/Chalkduster.ttf.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 *, *::before, *::after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border;
@@ -10,7 +19,7 @@ html {
 }
 body {
     background-position: center center;
-    background-color: #FFFFFF;
+    background-color: #E7E6E8;
     min-height: 100%;
     padding-bottom: 200px;
 }
@@ -80,6 +89,9 @@ body {
 }
 .sign-hover:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.sign-in-background {
+  background-color: #E7E6E8;
 }
 @media (min-width: 640px){
     html {font-size: 112%;}

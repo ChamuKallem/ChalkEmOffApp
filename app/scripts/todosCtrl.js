@@ -62,6 +62,7 @@
                 $scope.Todos.todo_id = responseTodos.data.data.id;
               }
              });
+          document.getElementById('newTodoName').value = "";
         };
         this.addTodoItem = function(){
           var itemName = document.getElementById('newItemName').value;
@@ -75,6 +76,7 @@
                 $scope.Todos.Items.push(responseNewItem.data.data);
               }
              });
+           document.getElementById('newItemName').value = "";
         };
         this.deleteItem = function(item_id){
           var itemIndex = $scope.Todos.Items.map(function(e) { return e.id; }).indexOf(item_id);
@@ -85,6 +87,21 @@
               $scope.Todos.Items.splice(itemIndex, 1);
              });
           console.log("entered delete Item");
+        };
+        this.deleteTodo= function(todo_id){
+          var todoIndex = $scope.Todos.map(function(e) { return e.id; }).indexOf(todo_id);
+          var str = todo_id + '';
+          $http.delete('http://localhost:3000/v1/todos/' + str).
+            then(function(delteResponse) {
+              console.log(delteResponse);
+              $scope.Todos.splice(todoIndex, 1);
+              if ($scope.Todos.length > 0){
+                $scope.Todos.title = $scope.Todos[0].attributes.title;
+                $scope.Todos.todo_id = $scope.Todos[0].todo_id;
+                $state.reload();
+              }
+             });
+          console.log("entered delete todo");
         };
 
     }

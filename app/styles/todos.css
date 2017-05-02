@@ -3,36 +3,46 @@
   height: 643px;
 }
 .main .todos-list-section {
-  position: relative;
+  /*position: relative;*/
   background-color: #D8D8D8;
-  padding-top: 15px;
-  width: 25%;
-  height: 100%;
-  float: left;
-  pa
+  /*padding-top: 15px;*/
+  /*width: 25%;*/
+  /*height: 100%;*/
+  /*float: left;*/
 }
+
 .todos-list-section .new-todo-button {
-  position: absolute;
-  left: 3rem;
+  /*position: absolute;*/
+  /*left: 3rem;*/
   width: 130px;
   height: 36px;
   background-color: #588570;
   border-radius: 10% 10%;
-  bottom: 1rem;
+  /*bottom: 1rem;*/
   font-family: Chalkduster, sans-serif;
   color: #FFFFFF;
   font-size: 16px;
+
+}
+.list-group-item {
+  background-color: #D8D8D8;
+  color: #416856;
 
 }
 .todo-name {
   text-align: center;
   font-family: Chalkduster, sans-serif;
   font-size: 18px;
-  margin: 15px;
   z-index: 1;
+  align-items: baseline;
+  display: block;
+
 }
 .todo-name:hover, .todo-name:active{
-  font-size: 150%;
+  /*font-size: 150%;*/
+  text-decoration: underline;
+  font-weight: bolder;
+  display: block;
 }
 .todo-name-hover:hover {
   /*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);*/
@@ -48,22 +58,21 @@
   height: 100%;
 }
 .todo-cat-section .cat-title {
-  position: relative;
-  background-color: yellow;
-}
-.todo-cat-section .cat-list {
-  position: relative;
-}
-.label-hover {
-  display: inline;
-  background-color: lightblue;
+  font-family: Chalkduster, sans-serif;
+  font-size: 30px;
+  margin-top: 30px;
   align-items: baseline;
+  text-align: center;
 }
-
+/*.label-hover {
+  display: inline;
+  align-items: baseline;
+}*/
 .icon-del {
   transition: all 0.5s;
   display: inline;
   opacity: 0.1;
+  float: right;
 }
 .icon-del:hover {
   opacity: 1.0;
@@ -71,25 +80,28 @@
 }
 .new-todo-section {
 float: left;
-margin: 2rem 0 0 2rem;
+margin: 2rem 2rem 2rem 0;
 
 }
 .new-todo-section-text {
-  position: relative;
+
   text-align: center;
   font-family: Chalkduster, sans-serif;
   font-size: 18px;
-  word-wrap: break-word;
-  background-color: yellow;
-  width: 50em;
+  color: #416856;
+  background-color: #e7e6e8;
 }
  .new-todo-section-input {
-   margin: 6rem 0 0 2rem;
-   background-color: lightgreen;
+   text-align: center;
+  background-color: #e7e6e8;
+}
+.new-cat-item {
+  margin: 2rem 2rem 2rem 0;
 }
 #newTodoName{
   width: 252px;
-  height: 36px;
+  height: 34px;
+  border-radius: 5%;
 }
 #newTodoButton{
   background-color: #588570;
@@ -100,9 +112,16 @@ margin: 2rem 0 0 2rem;
 }
 #newItemName {
   width: 252px;
-  height: 36px;
+  height: 34px;
+  border-radius: 5%;
 }
 #newItemButton{
-  width: 145;
-  height: 36px;
+  width: 110px;
+  height: 34px;
+  background-color: #588570;
+  border-radius: 10% 10%;
+  font-family: Chalkduster, sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-left: 0.5rem;
 }

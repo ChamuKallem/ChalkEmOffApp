@@ -1,15 +1,21 @@
-<section class="sign-content">
-  <form class="form-main" role="form" ng-init="signInForm = {}">
-    <div class="form-group">
-      <label>email</label>
-      <input type="email" name="email" ng-model="signInForm.email" required="required" class="form-control"/>
-    </div>
 
-    <div class="form-group">
-      <label>password</label>
-      <input type="password" name="password" ng-model="signInForm.password" required="required" class="form-control"/>
+  <div class="row sign-content">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <h4 class="signIn-title">Welcome back!<br/>Signin to manage your Todo lists</h4>
+        <div class="panel-body">
+          <form class="form-main" role="form" ng-init="signInForm = {}">
+            <div class="form-group">
+              <input id="emailAddress" placeholder="Enter a valid email address" type="email" name="email" ng-model="signInForm.email" required="required" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input id="userPassword" placeholder="Enter the password" type="password" name="password" ng-model="signInForm.password" required="required" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" ng-click="doLogin()">Login</button><br>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <button type="submit" class="btn btn-primary btn-lg" ng-click="doLogin()">Login</button><br>
-  </form>
-</section>
+    <div class="col-md-6"></div>
+  </div>

@@ -1,45 +1,55 @@
-<section class="main" ng-controller="todosCtrl as todolist" >
-  <div class="todos-list-section">
-    <div ng-repeat="todo in Todos" >
-          <div class="todo-name todo-name-hover" ng-click="todolist.showTodoItems(todo.id, todo.attributes.title )">
-              {{todo.attributes.title}}</br>
+<div class="main" ng-controller="todosCtrl as todolist" >
+  <div class="row">
+    <div class="col-md-4">
+      <div class="list-group todos-list-section">
+        <div ng-repeat="todo in Todos" >
+              <div class="list-group-item todo-name todo-name-hover" ng-click="todolist.showTodoItems(todo.id, todo.attributes.title )">
+                  {{todo.attributes.title}}</br>
+              </div>
+        </div>
+        <div class="list-group-item">
+          <button type="button" name="new-todo-button" class="new-todo-button todo-button-hover" ng-click="todolist.createTodo()" ng-model="newTodo">New Todo</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div ng-show="newTodo" class="list-group new-todo-section">
+          <div class="list-group-item new-todo-section-text">
+            <p>Create as many Todo Lists as you want and add/update/delete tasks to each of these Todo Lists as you go!</p>
           </div>
-    </div>
-    <button type="button" name="new-todo-button" class="new-todo-button todo-button-hover" ng-click="todolist.createTodo()" ng-model="newTodo">New Todo</button>
-  </div>
-  <div ng-show="newTodo" class="new-todo-section">
-      <div class="new-todo-section-text">
-        <p>Create as many Todo Lists as you want and add/update/delete tasks to each of these Todo Lists as you go!</p>
+          <div class="list-group-item new-todo-section-input">
+            <input type="text" name="newTodoName" placeholder="Enter a Todo Category" id="newTodoName">
+            <input type="button" name="createTodoBtn" id="newTodoButton" value="Create" ng-click="todolist.createTodoCat()">
+          </div>
       </div>
-      <div class="new-todo-section-input">
-        <input type="text" name="newTodoName" id="newTodoName" value="Enter a Todo Category">
-        <input type="button" name="createTodoBtn" id="newTodoButton" value="Create" ng-click="todolist.createTodoCat()">
-      </div>
-  </div>
-  <div ng-show="!newTodo"class="todo-cat-section">
-    <div class="cat-title">
-      <p>{{Todos.title}}</p>
-    </div>
-    <div class="new-cat-item">
-      <input type="text" name="newItemName" id="newItemName" value="Enter a Todo item">
-      <input type="button" name="addItemBtn" id="newItemButton" value="Add" ng-click="todolist.addTodoItem()">
-    </div>
-    <div class="cat-list">
-      <div ng-repeat="item in Todos.Items">
-        <div class="label-hover">
-          <input
-              type="checkbox"
-              name="todoItems[]"
-              value="{{item.attributes.name}}"
-              ng-checked="{{item.attributes.done}}"
-              ng-click="todolist.toggleItem(item.id, item.attributes.name, !item.attributes.done)">
-          {{item.attributes.name}}
+      <div ng-show="!newTodo"class="list-group todo-cat-section">
+        <div class="cat-title">
+          <span>{{Todos.title}}</span>
+          <div class="icon-del">
+            <img ng-click="todolist.deleteTodo(Todos.todo_id)" src="../assets/images/ic_delete_forever_black_18dp_1x.png"/>
+          </div>
         </div>
-        <div class="icon-del">
-          <img ng-click="todolist.deleteItem(item.id)" src="../assets/images/ic_delete_forever_black_18dp_1x.png"/>
+        <div class="new-cat-item">
+          <input type="text" name="newItemName" id="newItemName" placeholder="Enter a Todo item/task" >
+          <input type="button" name="addItemBtn" id="newItemButton" value="Add" ng-click="todolist.addTodoItem()">
         </div>
-        <br/>
+        <div class="list-group">
+          <div ng-repeat="item in Todos.Items">
+            <div class="list-group-item">
+              <input
+                  type="checkbox"
+                  name="todoItems[]"
+                  value="{{item.attributes.name}}"
+                  ng-checked="{{item.attributes.done}}"
+                  ng-click="todolist.toggleItem(item.id, item.attributes.name, !item.attributes.done)">
+              {{item.attributes.name}}
+              <div class="icon-del">
+                <img ng-click="todolist.deleteItem(item.id)" src="../assets/images/ic_delete_forever_black_18dp_1x.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>

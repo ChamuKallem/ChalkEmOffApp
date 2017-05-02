@@ -37,6 +37,6 @@
             });
   }
   angular
-      .module('ChalkEmOffApp', ['ng-token-auth', 'ui.router'])
+      .module('ChalkEmOffApp', ['ng-token-auth', 'ui.router', 'ui.bootstrap'])
       .config(config);
 })();
