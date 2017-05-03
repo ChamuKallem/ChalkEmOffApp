@@ -1,14 +1,14 @@
 <div class="main" ng-controller="todosCtrl as todolist" >
   <div class="row">
     <div class="col-md-4">
-      <div class="list-group todos-list-section">
+      <div class="list-group todos-left-panel-section">
         <div ng-repeat="todo in Todos" >
               <div class="list-group-item todo-name todo-name-hover" ng-click="todolist.showTodoItems(todo.id, todo.attributes.title )">
                   {{todo.attributes.title}}</br>
               </div>
         </div>
-        <div class="list-group-item">
-          <button type="button" name="new-todo-button" class="new-todo-button todo-button-hover" ng-click="todolist.createTodo()" ng-model="newTodo">New Todo</button>
+        <div class="list-group-item new-todo-button">
+          <button type="button" name="new-todo-button" ng-click="todolist.createTodo()" ng-model="newTodo">New Todo</button>
         </div>
       </div>
     </div>

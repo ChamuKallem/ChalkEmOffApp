@@ -1,5 +1,5 @@
 (function() {
-    function SignUpCtrl($scope, $state, $auth) {
+    function SignUpCtrl($scope, $state, $auth, $rootScope) {
         this.testtitle = "Sing Up for this Organized World!";
         console.log("Running signup control");
 
@@ -9,8 +9,10 @@
               // handle success response
               console.log(resp);
               console.log("entered sign up");
-              $scope.isLogin = true;
-              $scope.user_id = resp.id;
+              $rootScope.isLogin = true;
+              sessionStorage.setItem('user_id', resp.id);
+              // $scope.isLogin = true;
+              // $scope.user_id = resp.id;
               $state.reload();
               $state.go('todos');
             })
@@ -25,5 +27,5 @@
     }
     angular
         .module('ChalkEmOffApp')
-        .controller('SignUpCtrl', ['$scope', '$state', '$auth', SignUpCtrl]);
+        .controller('SignUpCtrl', ['$scope', '$state', '$auth', '$rootScope',  SignUpCtrl]);
 })();

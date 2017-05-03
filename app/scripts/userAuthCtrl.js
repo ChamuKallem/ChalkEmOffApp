@@ -1,5 +1,5 @@
 (function() {
-    function userAuthCtrl($scope, $state, $auth) {
+    function userAuthCtrl($scope, $state, $auth, $rootScope) {
       $scope.doSignIn = function(){
         $state.go('signin');
         // $scope.isLogin = true;
@@ -10,7 +10,9 @@
       };
       $scope.doSignOut = function(){
         console.log($auth);
-        $scope.isLogin = false;
+        $rootScope.isLogin = false;
+
+        // $scope.isLogin = false;
         $auth.signOut()
           .then(function(resp) {
             console.log(resp);
@@ -21,11 +23,12 @@
           .catch(function(resp) {
             // handle error response
             console.log("entered sign out in error");
+            $state.go('landing');
           });
       };
 
     }
     angular
         .module('ChalkEmOffApp')
-        .controller('userAuthCtrl', ['$scope', '$state', '$auth', userAuthCtrl]);
+        .controller('userAuthCtrl', ['$scope', '$state', '$auth', '$rootScope', userAuthCtrl]);
 })();

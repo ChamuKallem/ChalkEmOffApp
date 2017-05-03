@@ -1,13 +1,14 @@
 (function() {
     function todosCtrl($scope, $http, $state) {
         var Todos = [];
+        var user_id = sessionStorage.getItem('user_id');
         $scope.newTodo = true;
         $http.get('http://localhost:3000/v1/todos').
         then(function(responseList) {
             console.log(responseList);
             // $scope.users = response.data;
             angular.forEach(responseList.data.data, function(obj){
-              if (obj.attributes["user-id"] == $scope.user.id){
+              if (obj.attributes["user-id"] == user_id){
                 Todos.push(obj);
               }
             });
@@ -50,7 +51,7 @@
         this.createTodoCat = function(){
           var catName = document.getElementById('newTodoName').value;
           console.log(catName);
-          var data = {"title": catName, "complete": false, "user_id": $scope.user.id};
+          var data = {"title": catName, "complete": false, "user_id": user_id};
           $http.post('http://localhost:3000/v1/todos/', JSON.stringify(data)).
           then(function(responseTodos) {
               console.log(responseTodos);
