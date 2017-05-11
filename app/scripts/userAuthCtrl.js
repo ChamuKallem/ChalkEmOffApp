@@ -16,14 +16,11 @@
         $auth.signOut()
           .then(function(resp) {
             console.log(resp);
-            // // handle success response
-            // $state.go('/')
-            // $scope.isLogin = false;
+            $state.go('landing');
           })
           .catch(function(resp) {
             // handle error response
             console.log("entered sign out in error");
-            $state.go('landing');
           });
       };
 
