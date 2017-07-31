@@ -3,7 +3,7 @@
         var Todos = [];
         var user_id = sessionStorage.getItem('user_id');
         $scope.newTodo = true;
-        $http.get('http://localhost:3000/v1/todos').
+        $http.get('https://chalkemoffapi.herokuapp.com/v1/todos').
         then(function(responseList) {
             console.log(responseList);
             // $scope.users = response.data;
@@ -17,10 +17,10 @@
             $scope.testtitle = "Testing todos";
         });
         this.showTodoItems = function (todo_id, title){
-          // $http.get('http://localhost:3000/v1/todos/1/items').
+          // $http.get('https://chalkemoffapi.herokuapp.com/v1/todos/1/items').
           $scope.newTodo = false;
           var str = todo_id + '';
-          $http.get('http://localhost:3000/v1/todos/' + str + '/items').
+          $http.get('https://chalkemoffapi.herokuapp.com/v1/todos/' + str + '/items').
           then(function(responseItems) {
               console.log(responseItems);
               if (responseItems.data.data){
@@ -38,7 +38,7 @@
           var data = { "name":name, "done": bool};
           console.log(str);
           console.log(JSON.stringify(data));
-          $http.put('http://localhost:3000/v1/items/' + str , JSON.stringify(data)).
+          $http.put('https://chalkemoffapi.herokuapp.com/v1/items/' + str , JSON.stringify(data)).
           then(function(respUpdatedItem){
             console.log(respUpdatedItem);
           });
@@ -52,7 +52,7 @@
           var catName = document.getElementById('newTodoName').value;
           console.log(catName);
           var data = {"title": catName, "complete": false, "user_id": user_id};
-          $http.post('http://localhost:3000/v1/todos/', JSON.stringify(data)).
+          $http.post('https://chalkemoffapi.herokuapp.com/v1/todos/', JSON.stringify(data)).
           then(function(responseTodos) {
               console.log(responseTodos);
               if (responseTodos.data.data){
@@ -70,7 +70,7 @@
           console.log(itemName);
           var data = {"name": itemName, "done": false};
           var str = $scope.Todos.todo_id + '';
-          $http.post('http://localhost:3000/v1/todos/' + str + '/items', JSON.stringify(data)).
+          $http.post('https://chalkemoffapi.herokuapp.com/v1/todos/' + str + '/items', JSON.stringify(data)).
             then(function(responseNewItem) {
               console.log(responseNewItem);
               if (responseNewItem.data.data){
@@ -82,7 +82,7 @@
         this.deleteItem = function(item_id){
           var itemIndex = $scope.Todos.Items.map(function(e) { return e.id; }).indexOf(item_id);
           var str = item_id + '';
-          $http.delete('http://localhost:3000/v1/items/' + str).
+          $http.delete('https://chalkemoffapi.herokuapp.com/v1/items/' + str).
             then(function(delteResponse) {
               console.log(delteResponse);
               $scope.Todos.Items.splice(itemIndex, 1);
@@ -92,7 +92,7 @@
         this.deleteTodo= function(todo_id){
           var todoIndex = $scope.Todos.map(function(e) { return e.id; }).indexOf(todo_id);
           var str = todo_id + '';
-          $http.delete('http://localhost:3000/v1/todos/' + str).
+          $http.delete('https://chalkemoffapi.herokuapp.com/v1/todos/' + str).
             then(function(delteResponse) {
               console.log(delteResponse);
               $scope.Todos.splice(todoIndex, 1);

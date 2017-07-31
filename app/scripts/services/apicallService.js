@@ -2,7 +2,7 @@
     function apicallService($http){
         var Service = {};
         Service.getTodos = function (){
-          $http.get('http://localhost:3000/v1/todos').
+          $http.get('https://chalkemoffapi.herokuapp.com/v1/todos').
           then(function(responseList){
             console.log(responseList);
             return responseList.data.data;

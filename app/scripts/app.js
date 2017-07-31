@@ -1,7 +1,7 @@
 (function(){
   function config($stateProvider, $locationProvider, $authProvider){
     $authProvider.configure({
-      apiUrl: 'http://localhost:3000',
+      apiUrl: 'https://chalkemoffapi.herokuapp.com',
       handleRegistrationResponse: function(response) {
             alert("Registration response");
             console.log(response.data);
