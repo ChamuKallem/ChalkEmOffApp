@@ -1,17 +1,17 @@
 {
-  "name": "bloc-frontend-project-starter",
+  "name": "ChalkEmOffApp",
   "version": "0.0.3",
-  "description": "Starter project for the Bloc Frontend Web Development",
+  "description": "AngularJS Frontend for ChalkEmOffAPI",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bloc/bloc-frontend-project-starter"
+    "url": "https://github.com/chamukallem/chalkemoffapp"
   },
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Bloc Inc",
-  "license": "ISC",
+  "author": "chamukallem@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "angular-ui-bootstrap": "^2.5.0",
     "hapi": "~7.5.0",
