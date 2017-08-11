@@ -10,6 +10,7 @@
               console.log(resp);
               console.log("entered sign up");
               $rootScope.isLogin = true;
+              $rootScope.user_id = resp.data.data.id;
               sessionStorage.setItem('user_id', resp.id);
               // $scope.isLogin = true;
               // $scope.user_id = resp.id;

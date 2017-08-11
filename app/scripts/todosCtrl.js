@@ -1,7 +1,9 @@
 (function() {
-    function todosCtrl($scope, $http, $state) {
+    function todosCtrl($scope, $http, $state, $rootScope) {
         var Todos = [];
         var user_id = sessionStorage.getItem('user_id');
+        if (user_id === undefined)
+          user_id = $rootScope.user_id
         $scope.newTodo = true;
         $http.get('https://chalkemoffapi.herokuapp.com/v1/todos').
         then(function(responseList) {
@@ -108,5 +110,5 @@
     }
     angular
         .module('ChalkEmOffApp')
-        .controller('todosCtrl', ['$scope', '$http', '$state', todosCtrl]);
+        .controller('todosCtrl', ['$scope', '$http', '$state', '$rootScope', todosCtrl]);
 })();
