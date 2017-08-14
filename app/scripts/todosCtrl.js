@@ -2,7 +2,7 @@
     function todosCtrl($scope, $http, $state, $rootScope) {
         var Todos = [];
         var user_id = sessionStorage.getItem('user_id');
-        if (user_id === undefined)
+        if (user_id === 'undefined')
           user_id = $rootScope.user_id
         $scope.newTodo = true;
         $http.get('https://chalkemoffapi.herokuapp.com/v1/todos').
